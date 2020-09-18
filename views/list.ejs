@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Day of week</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="box" id="heading">
+      <h1> <%=Day%> </h1>
+    </div>
+<div class="box">
+  <%  for(var i=0;i<listItems.length;i++){ %>
+     <form class="" action="/delete" method="post">
+
+
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=listItems[i]._id%>" onChange="this.form.submit()">
+        <p><%=listItems[i].name%></p>
+
+    </div>
+    <input type="hidden" name="listName" value="<%=Day%>"></input>
+</form>
+  <%  } %>
+
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newitem" placeholder="add" autocomplete="off">
+      <button type="submit" name="button" value="<%=Day%>">+</button>
+
+    </form>
+    </div>
+  </body>
+</html>
